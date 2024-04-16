@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Dialog, Disclosure } from '@headlessui/react'
+import { Fragment, useState } from 'react'
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -36,13 +36,16 @@ export default function Header() {
   const {themeToggle} = useGlobalContext();
 
   return (
-    <header className="bg-base-100 border-b">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="bg-base-100 border-b " >
+      <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="#" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Canli</span>
             <img className="h-8 w-auto" src={logo} alt="" />
           </a>
+          <div className="form-control mx-12">
+      <input type="text" placeholder="Search" className="input input-bordered w-80" />
+    </div>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -56,7 +59,69 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        <label className="swap swap-rotate mr-5">
+        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <Popover.Button className="flex items-center gap-x-1  font-semibold leading-6 ">
+              Product
+              <ChevronDownIcon className="h-5 w-5 flex-none " aria-hidden="true" />
+            </Popover.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl shadow-lg ring-1 ring-gray-900/5 bg-base-100">
+                <div className="p-4">
+                  {products.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 "
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg  group-hover:bg-white">
+                        <item.icon className="h-6 w-6  group-hover:text-indigo-600" aria-hidden="true" />
+                      </div>
+                      <div className="flex-auto">
+                        <a href={item.href} className="block font-semibold ">
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                        <p className="mt-1 ">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 divide-x divide-gray-900/5 ">
+                  {callsToAction.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3  font-semibold leading-6  "
+                    >
+                      <item.icon className="h-5 w-5 flex-none " aria-hidden="true" />
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
+
+          <a href="#" className=" font-semibold leading-6 ">
+            Features
+          </a>
+          <a href="#" className=" font-semibold leading-6 ">
+            Marketplace
+          </a>
+          <a href="#" className=" font-semibold leading-6 ">
+            Company
+          </a>
+        </Popover.Group>
+        <label className="swap swap-rotate mx-12">
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" onChange={themeToggle}/>
 
@@ -66,9 +131,6 @@ export default function Header() {
             {/* moon icon */}
             <BsMoonFill className="swap-off h-4 w-4" />
           </label>
-          <a href="#" className="text-sm font-semibold leading-6 ">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </nav>
 
@@ -113,7 +175,7 @@ export default function Header() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7  hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3  font-semibold leading-7  hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>

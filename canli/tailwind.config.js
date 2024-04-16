@@ -8,7 +8,7 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: ["light","cupcake", "dark", "cmyk","night"],
+    themes: ["light","cupcake", "dark", "cmyk","night","dracula"],
   },
   plugins: [require("daisyui")],
 }

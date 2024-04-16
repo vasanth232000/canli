@@ -6,7 +6,7 @@ const AppContext = createContext();
 
 const themes = {
     light: "light",
-    night: "night",
+    dracula: "dracula",
   };
 
 const getThemeFromLocalStorage = () =>{
