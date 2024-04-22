@@ -110,17 +110,17 @@ export default function Header() {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Popover.Group className="hidden lg:flex lg:gap-x-6">
-          <a href="#" className=" font-semibold leading-6 btn btn-ghost text-lg">
+          <a href="#" className=" font-medium leading-6 btn btn-ghost text-lg">
               HOME
             </a>
-            <a href="#" className=" font-semibold leading-6 btn btn-ghost text-lg">
+            <a href="#" className=" font-medium leading-6 btn btn-ghost text-lg">
               ABOUT US
             </a>
-            <a href="#" className=" font-semibold leading-6 btn btn-ghost text-lg">
+            <a href="#" className=" font-medium leading-6 btn btn-ghost text-lg">
               SERVICE
             </a>
             <Popover className="relative">
-              <Popover.Button className="flex items-center gap-x-1 border-0 focus-visible:outline-none font-semibold leading-6 btn btn-ghost text-lg">
+              <Popover.Button className="flex items-center gap-x-1 border-0 focus-visible:outline-none font-medium leading-6 btn btn-ghost text-lg">
                 SHOP
                 <ChevronDownIcon
                   className="h-5 w-5 flex-none "
@@ -145,7 +145,7 @@ export default function Header() {
                         className="group relative flex items-center gap-x-6 rounded-lg p-2  leading-6 "
                       >
                         <div className="flex-auto">
-                          <a href="#" className="font-semibold btn btn-ghost text-lg w-full justify-start">
+                          <a href="#" className="font-medium btn btn-ghost text-lg w-full justify-start">
                             {item.name}
                             <span className="absolute inset-0" />
                           </a>
@@ -158,7 +158,7 @@ export default function Header() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="flex items-center justify-center gap-x-2.5 p-3  font-semibold leading-6  "
+                        className="flex items-center justify-center gap-x-2.5 p-3  font-medium leading-6  "
                       >
                         <item.icon
                           className="h-5 w-5 flex-none "
@@ -172,7 +172,7 @@ export default function Header() {
               </Transition>
             </Popover>
 
-            <a href="#" className=" font-semibold leading-6 btn btn-ghost text-lg">
+            <a href="#" className=" font-medium leading-6 btn btn-ghost text-lg">
               CONTACT US
             </a>
           </Popover.Group>
@@ -222,7 +222,7 @@ export default function Header() {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7  hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7  hover:bg-gray-50">
                         Product
                         <ChevronDownIcon
                           className={classNames(
@@ -238,7 +238,7 @@ export default function Header() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3  font-semibold leading-7  hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3  font-medium leading-7  hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -249,19 +249,19 @@ export default function Header() {
                 </Disclosure>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7  hover:bg-gray-50"
                 >
                   Features
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7  hover:bg-gray-50"
                 >
                   Marketplace
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7  hover:bg-gray-50"
                 >
                   Company
                 </a>
@@ -269,7 +269,7 @@ export default function Header() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7  hover:bg-gray-50"
                 >
                   Log in
                 </a>

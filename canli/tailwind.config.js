@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'body': ['"Open Sans"']
+    }
   },
   daisyui: {
     themes: ["light","cupcake", "dark", "cmyk","night","dracula"],
